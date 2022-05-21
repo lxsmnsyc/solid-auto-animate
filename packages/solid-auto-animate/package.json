@@ -1,6 +1,6 @@
 {
   "name": "solid-auto-animate",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "types": "dist/types/index.d.ts",
   "main": "dist/cjs/production/index.js",
   "module": "dist/esm/production/index.js",
@@ -59,8 +59,8 @@
     "vitest": "^0.9.4"
   },
   "peerDependencies": {
-    "solid-js": "^1.0",
-    "@formkit/auto-animate": "^1.0"
+    "@formkit/auto-animate": "^1.0",
+    "solid-js": "^1.0"
   },
   "scripts": {
     "prepublishOnly": "pridepack clean && pridepack build",
