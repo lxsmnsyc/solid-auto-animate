@@ -1,8 +1,12 @@
-import autoAnimateBase, { AutoAnimationPlugin, AutoAnimateOptions } from '@formkit/auto-animate';
+import type {
+  AutoAnimateOptions,
+  AutoAnimationPlugin,
+} from '@formkit/auto-animate';
+import autoAnimateBase from '@formkit/auto-animate';
 import { createEffect } from 'solid-js';
 
 declare module 'solid-js' {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
+  // biome-ignore lint/style/noNamespace: <explanation>
   namespace JSX {
     interface Directives {
       autoAnimate: Partial<AutoAnimateOptions> | AutoAnimationPlugin | true;
@@ -12,7 +16,7 @@ declare module 'solid-js' {
 
 export function autoAnimate<T extends HTMLElement>(
   el: T,
-  options: () => (Partial<AutoAnimateOptions> | AutoAnimationPlugin | true),
+  options: () => Partial<AutoAnimateOptions> | AutoAnimationPlugin | true,
 ): void {
   createEffect(() => {
     const currentOptions = options();
